@@ -1,0 +1,10 @@
+extern const GeoLayout gym_area_1_geo[];
+extern const GeoLayout gym_area_1[];
+extern const Collision gym_area_1_collision[];
+extern const MacroObject gym_area_1_macro_objs[];
+extern Lights1 gym_dl_f3dlite_material_lights;
+extern Vtx gym_dl_platform_mesh_layer_1_vtx_0[24];
+extern Gfx gym_dl_platform_mesh_layer_1_tri_0[];
+extern Gfx mat_gym_dl_f3dlite_material[];
+extern Gfx mat_revert_gym_dl_f3dlite_material[];
+extern Gfx gym_dl_platform_mesh_layer_1_with_revert[];
