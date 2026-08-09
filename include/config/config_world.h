@@ -60,7 +60,7 @@
 #elif EXTENDED_BOUNDS_MODE == 3 // 4x, normal cell size
     #define LEVEL_BOUNDARY_MAX 0x8000L // 32768
     #define CELL_SIZE          0x400   //  1024, NUM_CELLS = 64
-    #ifndef WORLD_SCALE
+    #ifndef WORLD_SCALE 
         #define WORLD_SCALE 4
     #endif
 #endif

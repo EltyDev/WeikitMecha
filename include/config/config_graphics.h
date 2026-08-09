@@ -37,7 +37,7 @@
  * Whenever you change this, make sure to run "make -C tools clean" to rebuild the skybox tool (alternatively go into skyconv.c and change the file in any way (like adding/deleting a space) to specifically rebuild that tool).
  * When increasing this, you should probably also increase the GFX pool size (the GFX_POOL_SIZE define above).
  */
-#define SKYBOX_SIZE 1
+#define SKYBOX_SIZE 2
 
 /**
  * When this option is enabled, LODs will ONLY work on console.
@@ -108,7 +108,7 @@
  * Uses the star object's model in the star dance cutscene.
  * This has a side effect of making the star dance star also transparent when Mario collects a transparent star.
  */
-// #define STAR_DANCE_USES_STARS_MODEL
+#define STAR_DANCE_USES_STARS_MODEL
 
 /**
  * Disables all object shadows. You'll probably only want this either as a last resort for performance or if you're making a super stylized hack.
@@ -132,7 +132,7 @@
  * Makes objects below the screen be culled. 
  * NOTE: Vanilla objects do not account for vertical culling.
  */
-// #define VERTICAL_CULLING
+#define VERTICAL_CULLING
 
 /**
  * If the first command of an object´s geolayout is not GEO_CULLING_RADIUS, DEFAULT_CULLING_RADIUS
@@ -144,7 +144,7 @@
  * Eases the textured screen transitions to make them look smoother. 
  * Extends the full radius for mario, bowser and the star transitions.
  */
-// #define POLISHED_TRANSITIONS
+#define POLISHED_TRANSITIONS
 
 /**
  * Uses frustratio of 2 instead of 1.
