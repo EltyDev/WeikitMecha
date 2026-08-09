@@ -1,6 +1,13 @@
-Lights1 gym_dl_f3dlite_material_lights = gdSPDefLights1(
-	0x7F, 0x7F, 0x7F,
-	0xFF, 0xFF, 0xFF, 0x49, 0x49, 0x49);
+Vtx gym_dl_platform_mesh_layer_1_vtx_cull[8] = {
+	{{ {-2200, -200, 2700}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {-2200, 0, 2700}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {-2200, 0, -2000}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {-2200, -200, -2000}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {2500, -200, 2700}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {2500, 0, 2700}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {2500, 0, -2000}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {2500, -200, -2000}, 0, {0, 0}, {0, 0, 0, 0} }},
+};
 
 Vtx gym_dl_platform_mesh_layer_1_vtx_0[24] = {
 	{{ {2500, 0, -2000}, 0, {624, 496}, {0, 127, 0, 255} }},
@@ -30,52 +37,44 @@ Vtx gym_dl_platform_mesh_layer_1_vtx_0[24] = {
 };
 
 Gfx gym_dl_platform_mesh_layer_1_tri_0[] = {
-	gsSPVertex(gym_dl_platform_mesh_layer_1_vtx_0 + 0, 16, 0),
-	gsSP1Triangle(0, 1, 2, 0),
-	gsSP1Triangle(0, 2, 3, 0),
-	gsSP1Triangle(4, 5, 6, 0),
-	gsSP1Triangle(4, 6, 7, 0),
-	gsSP1Triangle(8, 9, 10, 0),
-	gsSP1Triangle(8, 10, 11, 0),
-	gsSP1Triangle(12, 13, 14, 0),
-	gsSP1Triangle(12, 14, 15, 0),
-	gsSPVertex(gym_dl_platform_mesh_layer_1_vtx_0 + 16, 8, 0),
-	gsSP1Triangle(0, 1, 2, 0),
-	gsSP1Triangle(0, 2, 3, 0),
-	gsSP1Triangle(4, 5, 6, 0),
-	gsSP1Triangle(4, 6, 7, 0),
+	gsSPVertex(gym_dl_platform_mesh_layer_1_vtx_0 + 0, 24, 0),
+	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
+	gsSP2Triangles(4, 5, 6, 0, 4, 6, 7, 0),
+	gsSP2Triangles(8, 9, 10, 0, 8, 10, 11, 0),
+	gsSP2Triangles(12, 13, 14, 0, 12, 14, 15, 0),
+	gsSP2Triangles(16, 17, 18, 0, 16, 18, 19, 0),
+	gsSP2Triangles(20, 21, 22, 0, 20, 22, 23, 0),
 	gsSPEndDisplayList(),
 };
 
 Gfx mat_gym_dl_f3dlite_material[] = {
-	gsSPSetGeometryMode(G_LIGHTING | G_ZBUFFER | G_SHADE | G_SHADING_SMOOTH | G_CULL_BACK),
-	gsSPSetLights1(gym_dl_f3dlite_material_lights),
+	gsSPLightColor(LIGHT_1, 0xFFFFFFFF),
+	gsSPLightColor(LIGHT_2, 0x7F7F7FFF),
 	gsDPPipeSync(),
 	gsDPSetCombineLERP(0, 0, 0, SHADE, 0, 0, 0, ENVIRONMENT, 0, 0, 0, SHADE, 0, 0, 0, ENVIRONMENT),
 	gsDPSetAlphaDither(G_AD_NOISE),
-	gsDPSetTextureConvert(G_TC_FILT),
-	gsDPSetTextureFilter(G_TF_BILERP),
-	gsDPSetTexturePersp(G_TP_PERSP),
-	gsDPPipelineMode(G_PM_1PRIMITIVE),
 	gsSPTexture(65535, 65535, 0, 0, 1),
 	gsSPEndDisplayList(),
 };
 
 Gfx mat_revert_gym_dl_f3dlite_material[] = {
-	gsSPClearGeometryMode(G_LIGHTING | G_ZBUFFER | G_SHADE | G_SHADING_SMOOTH | G_CULL_BACK),
 	gsDPPipeSync(),
 	gsDPSetAlphaDither(G_AD_DISABLE),
-	gsDPSetTextureConvert(G_TC_CONV),
-	gsDPSetTextureFilter(G_TF_POINT),
-	gsDPSetTexturePersp(G_TP_NONE),
-	gsDPPipelineMode(G_PM_NPRIMITIVE),
 	gsSPEndDisplayList(),
 };
 
-Gfx gym_dl_platform_mesh_layer_1_with_revert[] = {
+Gfx gym_dl_platform_mesh_layer_1[] = {
+	gsSPClearGeometryMode(G_LIGHTING),
+	gsSPVertex(gym_dl_platform_mesh_layer_1_vtx_cull + 0, 8, 0),
+	gsSPSetGeometryMode(G_LIGHTING),
+	gsSPCullDisplayList(0, 7),
 	gsSPDisplayList(mat_gym_dl_f3dlite_material),
 	gsSPDisplayList(gym_dl_platform_mesh_layer_1_tri_0),
 	gsSPDisplayList(mat_revert_gym_dl_f3dlite_material),
+	gsSPEndDisplayList(),
+};
+
+Gfx gym_dl_final_revert_mesh_layer_1[] = {
 	gsDPPipeSync(),
 	gsSPSetGeometryMode(G_LIGHTING),
 	gsSPClearGeometryMode(G_TEXTURE_GEN),
