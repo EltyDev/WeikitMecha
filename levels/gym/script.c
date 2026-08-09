@@ -11,7 +11,6 @@
 
 #include "levels/scripts.h"
 
-#include "actors/group14.h"
 #include "actors/common1.h"
 #include "make_const_nonconst.h"
 #include "levels/gym/header.h"
@@ -28,7 +27,13 @@ const LevelScript level_gym_entry[] = {
 	ALLOC_LEVEL_POOL(),
 	MARIO(MODEL_MARIO, 0x00000001, bhvMario), 
 	JUMP_LINK(script_func_global_1), 
-	LOAD_MODEL_FROM_GEO(MODEL_BOB_BUBBLY_TREE, bubbly_tree_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_BOB_BUBBLY_TREE, bubbly_tree_geo),
+	LOAD_MODEL_FROM_GEO(MODEL_SSL_PALM_TREE, palm_tree_geo),
+	LOAD_MODEL_FROM_GEO(MODEL_SL_SNOW_TREE, snow_tree_geo),
+	LOAD_MODEL_FROM_GEO(MODEL_CASTLE_DOOR_0_STARS, castle_door_1_star_geo),
+	LOAD_MODEL_FROM_GEO(MODEL_BBH_HAUNTED_DOOR, haunted_door_geo),
+	LOAD_MODEL_FROM_GEO(MODEL_CASTLE_METAL_DOOR, metal_door_geo),
+	LOAD_MODEL_FROM_GEO(MODEL_CASTLE_WOODEN_DOOR, wooden_door_geo),
 	/* Fast64 begin persistent block [level commands] */
 	/* Fast64 end persistent block [level commands] */
 
