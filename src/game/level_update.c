@@ -1404,6 +1404,7 @@ s32 lvl_set_current_level(UNUSED s16 initOrUpdate, s32 levelNum) {
         return FALSE;
     }
 	if (gCurrLevelNum == LEVEL_GYM) return 0;
+	if (gCurrLevelNum == LEVEL_WELKIT_CASTLE_PAST) return 0;
 
     return !gDebugLevelSelect;
 }
