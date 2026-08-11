@@ -3,7 +3,7 @@ const MacroObject gym_area_1_macro_objs[] = {
 	MACRO_OBJECT_WITH_BEH_PARAM(macro_chuckya, 0, 1606, 0, -3717, 0x00000000),
 	MACRO_OBJECT_WITH_BEH_PARAM(macro_goomba, 0, 2206, 0, -3717, 0x00000000),
 	MACRO_OBJECT_WITH_BEH_PARAM(macro_huge_goomba, 0, 1906, 0, -3717, 0x00000000),
-	MACRO_OBJECT_WITH_BEH_PARAM(macro_koopa, 0, -194, 4, -3717, 0x00000000),
+	//MACRO_OBJECT_WITH_BEH_PARAM(macro_koopa, 0, -194, 4, -3717, 0x00000000),
 	MACRO_OBJECT_WITH_BEH_PARAM(macro_box_metal_cap, 0, -1511, 300, -1302, 0x00000000),
 	MACRO_OBJECT_WITH_BEH_PARAM(macro_metal_cap_switch, 0, -1511, 0, -1702, 0x00000000),
 	MACRO_OBJECT_WITH_BEH_PARAM(macro_box_vanish_cap, 0, -1111, 300, -1302, 0x00000000),
