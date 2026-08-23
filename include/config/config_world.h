@@ -28,12 +28,12 @@
  *      level boundaries are 4 times as big (-32768 to 32767)
  *      Collision calculations remain as fast as vanilla, at the cost of using far more RAM (16 times vanilla).
  *      64x64 collision cells.
- */
+ *
 
 /**
  * Set this to the extended bounds mode you want, then do "make clean".
  */
-#define EXTENDED_BOUNDS_MODE 1
+#define EXTENDED_BOUNDS_MODE 3
 
 /**************************************************************************
  * Don't touch the stuff past this point unless you know what you're doing!
