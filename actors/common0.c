@@ -82,3 +82,4 @@ UNUSED static const u64 binid_18 = 18;
 #include "wellwa/model.inc.c"
 #include "wellwa/anims/data.inc.c"
 #include "wellwa/anims/table.inc.c"
+#include "skinned/model.inc.c"
