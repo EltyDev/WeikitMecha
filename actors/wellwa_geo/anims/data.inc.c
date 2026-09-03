@@ -1,5 +1,5 @@
 // 1
-static const s16 anim_wellwa_values[] = {
+static const s16 anim_wellwa_geo_values[] = {
 	0x0000, 
 };
 
@@ -178,86 +178,86 @@ static const u16 anim_wellwa_giving_key_idle_to_idle_worried_indices[] = {
 	
 };
 
-static const struct Animation wellwa_anim_wellwa_idle_worried = {
+static const struct Animation wellwa_geo_anim_wellwa_idle_worried = {
 	0x0000, // flags 
 	0, // animYTransDivisor
 	0, // startFrame
 	0, // loopStart
 	50, // loopEnd
 	ANIMINDEX_NUMPARTS(anim_wellwa_idle_worried_indices), // unusedBoneCount
-	anim_wellwa_values, // values
+	anim_wellwa_geo_values, // values
 	anim_wellwa_idle_worried_indices, // index
 	0 // length
 };
 
-static const struct Animation wellwa_anim_wellwa_idle_worried_to_talking = {
+static const struct Animation wellwa_geo_anim_wellwa_idle_worried_to_talking = {
 	0x0001, // flags 
 	0, // animYTransDivisor
 	0, // startFrame
 	0, // loopStart
 	15, // loopEnd
 	ANIMINDEX_NUMPARTS(anim_wellwa_idle_worried_to_talking_indices), // unusedBoneCount
-	anim_wellwa_values, // values
+	anim_wellwa_geo_values, // values
 	anim_wellwa_idle_worried_to_talking_indices, // index
 	0 // length
 };
 
-static const struct Animation wellwa_anim_wellwa_talking = {
+static const struct Animation wellwa_geo_anim_wellwa_talking = {
 	0x0000, // flags 
 	0, // animYTransDivisor
 	0, // startFrame
 	0, // loopStart
 	35, // loopEnd
 	ANIMINDEX_NUMPARTS(anim_wellwa_talking_indices), // unusedBoneCount
-	anim_wellwa_values, // values
+	anim_wellwa_geo_values, // values
 	anim_wellwa_talking_indices, // index
 	0 // length
 };
 
-static const struct Animation wellwa_anim_wellwa_talking_to_giving_key = {
+static const struct Animation wellwa_geo_anim_wellwa_talking_to_giving_key = {
 	0x0001, // flags 
 	0, // animYTransDivisor
 	0, // startFrame
 	0, // loopStart
 	15, // loopEnd
 	ANIMINDEX_NUMPARTS(anim_wellwa_talking_to_giving_key_indices), // unusedBoneCount
-	anim_wellwa_values, // values
+	anim_wellwa_geo_values, // values
 	anim_wellwa_talking_to_giving_key_indices, // index
 	0 // length
 };
 
-static const struct Animation wellwa_anim_wellwa_giving_key = {
+static const struct Animation wellwa_geo_anim_wellwa_giving_key = {
 	0x0101, // flags ANIM_FLAG_NOLOOP, ANIM_FLAG_BONE_TRANS
 	0, // animYTransDivisor
 	0, // startFrame
 	0, // loopStart
 	60, // loopEnd
 	ANIMINDEX_NUMPARTS(anim_wellwa_giving_key_indices), // unusedBoneCount
-	anim_wellwa_values, // values
+	anim_wellwa_geo_values, // values
 	anim_wellwa_giving_key_indices, // index
 	0 // length
 };
 
-static const struct Animation wellwa_anim_wellwa_giving_key_idle = {
+static const struct Animation wellwa_geo_anim_wellwa_giving_key_idle = {
 	0x0100, // flags ANIM_FLAG_BONE_TRANS
 	0, // animYTransDivisor
 	0, // startFrame
 	0, // loopStart
 	20, // loopEnd
 	ANIMINDEX_NUMPARTS(anim_wellwa_giving_key_idle_indices), // unusedBoneCount
-	anim_wellwa_values, // values
+	anim_wellwa_geo_values, // values
 	anim_wellwa_giving_key_idle_indices, // index
 	0 // length
 };
 
-static const struct Animation wellwa_anim_wellwa_giving_key_idle_to_idle_worried = {
+static const struct Animation wellwa_geo_anim_wellwa_giving_key_idle_to_idle_worried = {
 	0x0101, // flags ANIM_FLAG_NOLOOP, ANIM_FLAG_BONE_TRANS
 	0, // animYTransDivisor
 	0, // startFrame
 	0, // loopStart
 	15, // loopEnd
 	ANIMINDEX_NUMPARTS(anim_wellwa_giving_key_idle_to_idle_worried_indices), // unusedBoneCount
-	anim_wellwa_values, // values
+	anim_wellwa_geo_values, // values
 	anim_wellwa_giving_key_idle_to_idle_worried_indices, // index
 	0 // length
 };
