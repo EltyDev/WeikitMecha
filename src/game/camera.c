@@ -2845,7 +2845,7 @@ void update_lakitu(struct Camera *c) {
         gLakituState.roll += sHandheldShakeRoll;
         gLakituState.roll += gLakituState.keyDanceRoll;
 
-        if (c->mode != CAMERA_MODE_C_UP && c->cutscene == CUTSCENE_NONE) {
+        if (c->mode != CAMERA_MODE_C_UP && c->cutscene == CUTSCENE_NONE && c->unusedVec1[0] != 67) {
             gCollisionFlags |= COLLISION_FLAG_CAMERA;
             distToFloor = find_floor(gLakituState.pos[0],
                                      gLakituState.pos[1] + 20.0f,
@@ -2942,7 +2942,7 @@ void update_camera(struct Camera *c) {
         }
     }
     // If not in a cutscene, do mode processing
-    if (c->cutscene == CUTSCENE_NONE) {
+    if (c->cutscene == CUTSCENE_NONE && c->unusedVec1[0] != 67) {
         sYawSpeed = 0x400;
 
         if (sSelectionFlags & CAM_MODE_MARIO_ACTIVE) {
@@ -3040,7 +3040,7 @@ void update_camera(struct Camera *c) {
 #endif
         // If fixed camera is selected as the alternate mode, then fix the camera as long as the right
         // trigger is held
-        if ((c->cutscene == CUTSCENE_NONE &&
+        if ((c->cutscene == CUTSCENE_NONE && c->unusedVec1[0] != 67 &&
             (gPlayer1Controller->buttonDown & R_TRIG) && cam_select_alt_mode(0) == CAM_SELECTION_FIXED)
             || (gCameraMovementFlags & CAM_MOVE_FIX_IN_PLACE)
             || (sMarioCamState->action) == ACT_GETTING_BLOWN) {
@@ -8634,8 +8634,11 @@ void cutscene_dialog(struct Camera *c) {
         }
 
         gCutsceneTimer = CUTSCENE_LOOP;
-        retrieve_info_star(c);
-        transition_next_state(c, 15);
+        if (gCamera->unusedVec1[0] != 67) {
+            retrieve_info_star(c);
+            transition_next_state(c, 15);
+        } else {
+        }
         sStatusFlags |= CAM_FLAG_UNUSED_CUTSCENE_ACTIVE;
         cutscene_unsoften_music(c);
     }

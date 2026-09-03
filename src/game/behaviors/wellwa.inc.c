@@ -28,29 +28,37 @@ void wellwa_init(void) {
     o->oWellwaToAnimation = WELLWA_ANIM_WELLWA_IDLE_WORRIED;
 }
 
-void wellwa_give_key(void) {
+void wellwa_act_give_key(void) {
     s16 animIndex = o->oWellwaFromAnimation;
     if (animIndex == WELLWA_ANIM_WELLWA_GIVING_KEY_IDLE && cur_obj_check_if_at_animation_end()) {
         struct Object *key = spawn_object_relative(0, 0, 100, 200, o, MODEL_BOWSER_KEY, bhvBowserKey);
         key->oAngleVelYaw = 0x400;
         o->oAction = WELLWA_ACT_GIVING_KEY_IDLE;
+        gCamera->unusedVec1[0] = 0;
+        set_mario_npc_dialog(MARIO_DIALOG_STOP);
+        o->activeFlags &= ~ACTIVE_FLAG_INITIATED_TIME_STOP;
+        gCamera->cutscene = FALSE;
     }
 }
 
 void wellwa_act_talking(void) {
     cur_obj_rotate_yaw_toward(o->oAngleToMario, 0x800);
+    gCamera->unusedVec1[0] = 67;
     if (set_mario_npc_dialog(MARIO_DIALOG_LOOK_FRONT) == MARIO_DIALOG_STATUS_SPEAK) {
         o->activeFlags |= ACTIVE_FLAG_INITIATED_TIME_STOP;
         s16 response = cutscene_object_with_dialog(CUTSCENE_DIALOG, o, DIALOG_170);
         if (response != DIALOG_RESPONSE_NONE) {
-            set_mario_npc_dialog(MARIO_DIALOG_STOP);
-            o->activeFlags &= ~ACTIVE_FLAG_INITIATED_TIME_STOP;
             if (wellwa_can_give_key()) {
                 o->oInteractionSubtype = 0;
                 o->oAction = WELLWA_ACT_GIVING_KEY;
+                gCamera->cutscene = TRUE;
                 wellwa_set_animation_transition(WELLWA_ANIM_WELLWA_GIVING_KEY, WELLWA_ANIM_WELLWA_GIVING_KEY_IDLE);
-            } else
+            } else {
+                set_mario_npc_dialog(MARIO_DIALOG_STOP);
+                o->activeFlags &= ~ACTIVE_FLAG_INITIATED_TIME_STOP;
+                gCamera->unusedVec1[0] = 0;
                 o->oAction = WELLWA_ACT_IDLE;
+            }
         }
     }
 }
@@ -83,7 +91,7 @@ void wellwa_update(void) {
             wellwa_act_talking();
             break;
         case WELLWA_ACT_GIVING_KEY:
-            wellwa_give_key();
+            wellwa_act_give_key();
             break;
     }
     wellwa_update_animation();
