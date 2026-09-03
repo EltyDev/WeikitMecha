@@ -1255,6 +1255,13 @@
 #define /*0x0FC*/ oYoshiChosenHome OBJECT_FIELD_S32(0x1D)
 #define /*0x100*/ oYoshiTargetYaw  OBJECT_FIELD_S32(0x1E)
 
+/* Wellwa */
+#define /*0x0F4*/ oWellwaFromAnimation OBJECT_FIELD_S32(0x1B)
+#define /*0x0F8*/ oWellwaToAnimation OBJECT_FIELD_S32(0x1C)
+#define /*0x0FA*/ oWellwaIsAnimating OBJECT_FIELD_S16(0x1D, 0)
+
+
+
 
 /*Custom general defines:
 

@@ -56,6 +56,7 @@ const LevelScript level_welkit_castle_past_entry[] = {
 		OBJECT(MODEL_CASTLE_KEY_DOOR, -484, 539, 8570, 0, -90, 0, 0x00000000, bhvDoor),
 		OBJECT(MODEL_CASTLE_METAL_DOOR, 1200, 0, -800, 0, 0, 0, 0x00000000, bhvDoor),
 		OBJECT(MODEL_CASTLE_WOODEN_DOOR, 1200, 0, -400, 0, 0, 0, 0x00000000, bhvDoor),
+		OBJECT(MODEL_WELLWA, -45, 502, 4305, 0, 0, 0, 0x00000000, bhvWellwa),
 		TERRAIN(welkit_castle_past_area_1_collision),
 		MACRO_OBJECTS(welkit_castle_past_area_1_macro_objs),
 		SET_BACKGROUND_MUSIC(0x00, SEQ_LEVEL_INSIDE_CASTLE),

@@ -197,7 +197,4 @@ extern const Collision unknown_seg8_collision_080262F8[];
 
 #include "wellwa/geo_header.h"
 #include "wellwa/anim_header.h"
-#include "skinned/geo_header.h"
-#include "wellwa_geo/geo_header.h"
-#include "wellwa_geo/anim_header.h"
 #endif

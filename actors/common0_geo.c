@@ -28,5 +28,3 @@
 #include "exclamation_box_outline/geo.inc.c"
 #include "koopa_shell/geo.inc.c"
 #include "wellwa/geo.inc.c"
-#include "skinned/geo.inc.c"
-#include "wellwa_geo/geo.inc.c"

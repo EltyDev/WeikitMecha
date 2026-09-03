@@ -84,7 +84,7 @@ else ifeq ($(VERSION),us)
 else ifeq ($(VERSION),eu)
   DEFINES += VERSION_EU=1
 else ifeq ($(VERSION),sh)
-  DEFINES += VERSION_SH=1
+  DEFINES += VERSION_SH=1 
 endif
 
 # FIXLIGHTS - converts light objects to light color commands for assets, needed for vanilla-style lighting

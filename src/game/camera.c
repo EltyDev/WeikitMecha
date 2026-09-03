@@ -6073,11 +6073,10 @@ struct CameraTrigger sCamWelkitCastlePast[] = {
 struct CameraTrigger sCamPrinceValley[] = {
 	NULL_TRIGGER
 };
-
-struct CameraTrigger sCamWelkitCity[] = {
-	NULL_TRIGGER
-};
 struct CameraTrigger sCamCatamesa[] = {
+    NULL_TRIGGER
+};
+struct CameraTrigger sCamWelkitCity[] = {
 	NULL_TRIGGER
 };
 struct CameraTrigger *sCameraTriggers[LEVEL_COUNT + 1] = {
