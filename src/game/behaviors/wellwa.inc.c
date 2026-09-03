@@ -42,8 +42,8 @@ void wellwa_act_give_key(void) {
 }
 
 void wellwa_act_talking(void) {
-    cur_obj_rotate_yaw_toward(o->oAngleToMario, 0x800);
     gCamera->unusedVec1[0] = 67;
+    cur_obj_rotate_yaw_toward(o->oAngleToMario, 0x800);
     if (set_mario_npc_dialog(MARIO_DIALOG_LOOK_FRONT) == MARIO_DIALOG_STATUS_SPEAK) {
         o->activeFlags |= ACTIVE_FLAG_INITIATED_TIME_STOP;
         s16 response = cutscene_object_with_dialog(CUTSCENE_DIALOG, o, DIALOG_170);

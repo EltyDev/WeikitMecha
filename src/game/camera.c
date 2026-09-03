@@ -8634,10 +8634,9 @@ void cutscene_dialog(struct Camera *c) {
         }
 
         gCutsceneTimer = CUTSCENE_LOOP;
-        if (gCamera->unusedVec1[0] != 67) {
+        if (gCamera->unusedVec1[0] != 67 || !wellwa_can_give_key(c)) {
             retrieve_info_star(c);
             transition_next_state(c, 15);
-        } else {
         }
         sStatusFlags |= CAM_FLAG_UNUSED_CUTSCENE_ACTIVE;
         cutscene_unsoften_music(c);
